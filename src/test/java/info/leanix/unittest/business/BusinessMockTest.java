@@ -3,18 +3,22 @@ package info.leanix.unittest.business;
 import info.leanix.unittest.data.SomeDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class BusinessMockTest {
-    BusinessImp business = new BusinessImp();
-    SomeDataService dataServiceMock = mock(SomeDataService.class);
+    @InjectMocks
+    BusinessImp business;
+    @Mock
+    SomeDataService dataServiceMock;
 
-    @BeforeEach
-    public void before() {
-        business.setSomeDataService(dataServiceMock);
-    }
 
     @Test
     public void calculateSumUsingDataService_basic() {
