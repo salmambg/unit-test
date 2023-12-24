@@ -1,5 +1,6 @@
-package info.leanix.unittest.business;
+package info.leanix.unittest.business.serviceTest;
 
+import info.leanix.unittest.business.BusinessImp;
 import info.leanix.unittest.data.SomeDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
