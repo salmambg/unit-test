@@ -1,6 +1,7 @@
 package info.leanix.unittest.business;
 
 import info.leanix.unittest.data.SomeDataService;
+import java.util.Arrays;
 
 public class BusinessImp {
 
@@ -10,11 +11,9 @@ public class BusinessImp {
     }
 
     public int calculateSum(int[] data) {
-        int sum = 0;
-        for (int value:data) {
-            sum += value;
-        }
-        return sum;
+//       OptionalInt number = Arrays.stream(data).reduce(Integer::sum);
+//       return number.orElse(0);
+        return Arrays.stream(data).reduce(Integer::sum).orElse(0);
     }
     public int calculateSumUsingDataService() {
         int sum = 0;
